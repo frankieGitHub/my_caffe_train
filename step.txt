@@ -14,3 +14,5 @@
    ../build/tools/caffe train -solver face_solver.prototxt -weights xxx/.caffemodel 
    -gpu all 2>&1 | tee result/mobileFaceNet_20180507_0pt3.log
    详细参数可以参考：https://www.cnblogs.com/CQUTWH/p/5932570.html
+
+5. make_img_diff.py 用于生成两个图片的像素差值并生成新的jpg
