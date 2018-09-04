@@ -1,0 +1,16 @@
+1. 使用gen_train_label.py生成train.txt, val.txt
+   格式如
+   xxx/xx/x  0
+   xxx/xx/y  1
+   ...
+2. 使用caffe自带的脚本：
+/home/coolpad/caffe/caffe/examples/imagenet/create_imagenet.sh
+来生成LMDB
+3. 可以现有的solver/prototxt来训练,
+    如：
+    https://github.com/zhanglaplace/MobileFaceNet
+    或：https://github.com/TechnikEmpire/NsfwSqueezenet
+4. 启动训练
+   ../build/tools/caffe train -solver face_solver.prototxt -weights xxx/.caffemodel 
+   -gpu all 2>&1 | tee result/mobileFaceNet_20180507_0pt3.log
+   详细参数可以参考：https://www.cnblogs.com/CQUTWH/p/5932570.html
